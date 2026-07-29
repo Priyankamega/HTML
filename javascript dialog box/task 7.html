@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Action Validator</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background: linear-gradient(to right,#4facfe,#00f2fe);
+            text-align:center;
+            padding-top:100px;
+        }
+
+        .box{
+            width:500px;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0px 0px 15px gray;
+        }
+
+        button{
+            padding:12px 25px;
+            font-size:18px;
+            background:#007BFF;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        h1{
+            color:#333;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:20px;
+            color:green;
+            font-weight:bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>User Action Validator</h1>
+
+<p>Click the button to delete a task.</p>
+
+<button onclick="deleteTask()">Delete Task</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+
+function deleteTask()
+{
+
+alert("You are about to delete the selected task.");
+
+let choice=confirm("Are you sure you want to delete this task?");
+
+if(choice)
+{
+let reason=prompt("Enter the reason for deleting the task:");
+
+if(reason=="" || reason==null)
+{
+reason="No reason provided";
+}
+
+document.getElementById("result").innerHTML=
+"✅ Task Deleted Successfully.<br>Reason: "+reason;
+
+}
+else
+{
+document.getElementById("result").innerHTML=
+"❌ Task Deletion Cancelled.";
+}
+
+}
+
+</script>
+
+</body>
+</html>
